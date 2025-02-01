@@ -1,0 +1,45 @@
+
+@use  "../base/variables" as var;
+
+.topbar {
+    width: 100%;
+    overflow: hidden;
+    background: var.$primary-color;
+    padding: 5px 0;
+    white-space: nowrap;
+    position: relative;
+
+    .marquee {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+
+        #marquee-text {
+            font-family: var.$fAssistant;
+            display: flex;
+            white-space: nowrap;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var.$text-color;
+            animation: marquee-scroll 10s linear infinite;
+        }
+        .marquee-icon {
+            color: var.$icon-color;
+            padding: 0.1rem;
+            margin: auto;
+        }
+    }
+
+}
+
+
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
