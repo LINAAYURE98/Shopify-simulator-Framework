@@ -10,3 +10,13 @@ document.addEventListener("DOMContentLoaded", function () {
         marqueeText.innerHTML = repeatedText;
     }
 });
+
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.site-header');
+    if (window.scrollY > 0) {
+      header.classList.add('is-scrolled');
+    } else {
+      header.classList.remove('is-scrolled');
+    }
+  });
+  

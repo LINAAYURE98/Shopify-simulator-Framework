@@ -13,5 +13,33 @@
         "label": "Background Color"
       }
     ]
+  },
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "text",
+        "id": "logo_text",
+        "label": "STORE"
+      },
+      {
+        "type": "color",
+        "id": "header_background",
+        "label": "Header Background Color",
+        "default": "#1A1A1A"
+      },
+      {
+        "type": "text",
+        "id": "payment_text",
+        "label": "Payment Methods Text",
+        "default": "We Accept"
+      },
+      {
+        "type": "image_picker",
+        "label": "Logo Image",
+        "id": "logo_image",
+        "default": "logotipo.png"
+      }
+    ]
   }
 ]

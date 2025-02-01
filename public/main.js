@@ -34,6 +34,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.site-header');
+    if (window.scrollY > 0) {
+      header.classList.add('is-scrolled');
+    } else {
+      header.classList.remove('is-scrolled');
+    }
+  });
+  
 })();
 
 // This entry needs to be wrapped in an IIFE because it needs to be in strict mode.

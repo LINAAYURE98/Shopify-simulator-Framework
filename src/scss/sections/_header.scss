@@ -1,112 +1,131 @@
+@use "../base/variables" as var;
+
 .site-header {
-    position: fixed;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+
+  &.is-scrolled {
+    background: #00000033 !important ;
+    backdrop-filter: blur(10px);
     top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    background-color: #1A1A1A;
-    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-    
-    &.is-scrolled {
-      background-color: rgba(26, 26, 26, 0.8);
-      backdrop-filter: blur(10px);
-    }
   }
-  
-  .header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 2rem;
-  }
-  
-  .header-logo {
-    .logo-placeholder {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      
-      .shuffle-logo {
-        color: #8B5CF6;
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
-      
-      .store-text {
-        color: white;
-        font-size: 1.25rem;
-        font-weight: bold;
-      }
-    }
-  }
-  
-  .header-payment-methods {
-    .payment-icons {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      
-      span {
-        color: white;
-        font-size: 0.875rem;
-      }
-      
-      .payment-icon {
-        width: 24px;
-        height: 24px;
-      }
-    }
-  }
-  
-  .header-nav {
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header-logo {
+  .logo-placeholder {
     display: flex;
     align-items: center;
-    gap: 2rem;
-    
-    .main-nav {
-      display: flex;
-      gap: 1.5rem;
-      
-      .nav-link {
-        color: white;
-        text-decoration: none;
-        font-size: 0.875rem;
-        transition: color 0.2s ease;
-        
-        &:hover {
-          color: #8B5CF6;
-        }
-      }
+    gap: 0.5rem;
+
+    .shuffle-logo {
+      color: #8B5CF6;
+      font-size: 1.5rem;
+      font-weight: bold;
     }
-    
-    .cart-icon {
-      color: white;
-      cursor: pointer;
+
+    .store-text {
+      color: var.$text-color;
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.header-payment-methods {
+  .payment-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+
+    .payment-content {
+      width: auto;
+      margin: auto;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var.$primary-color;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+    }
+
+    span {
+      color: var.$text-color;
+      font-size: 0.875rem;
+      font-family: var.$fAssistant;
+      padding: 0 5px;
+    }
+
+    .payment-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .main-nav {
+    display: flex;
+    gap: 0.5rem;
+
+    .nav-link {
+      color: var.$text-color;
+      text-decoration: none;
+      font-size: 0.875rem;
       transition: color 0.2s ease;
-      
+      font-family: var.$fsystemui;
+
       &:hover {
         color: #8B5CF6;
       }
     }
   }
-  
-  // Responsive styles
-  @media (max-width: 768px) {
-    .header-container {
-      grid-template-columns: 1fr auto;
-      gap: 1rem;
-    }
-    
-    .header-payment-methods {
-      display: none; // Hide payment methods on mobile
-    }
-    
-    .header-nav {
-      .main-nav {
-        display: none; // Hide navigation links on mobile
-      }
+
+  .cart-icon {
+    color: var.$text-color;
+    background: var.$primary-color;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 10px;
+    width: 25px;
+    height: 26px;
+    padding: 0.5rem 1rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .header-container {
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+  }
+
+  .header-payment-methods {
+    display: none; 
+  }
+
+  .header-nav {
+    .main-nav {
+      display: none; 
     }
   }
+}

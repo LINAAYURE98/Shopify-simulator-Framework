@@ -1,5 +1,14 @@
 {
   "sections": {
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_text": "STORE",
+        "logo_image": "logotipo.png",
+        "header_background": "#1A1A1A",
+        "payment_text": "We Accept"
+      }
+    },
     "featured-products": {
       "type": "featured-products",
       "settings": {
