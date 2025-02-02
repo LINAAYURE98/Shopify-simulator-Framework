@@ -1,5 +1,11 @@
 {
   "sections": {
+    "top-bar": {
+      "type": "top-bar",
+      "settings": {
+        "marquee_text": "Free Shipping on Orders Over $50"
+      }
+    },
     "header": {
       "type": "header",
       "settings": {
@@ -19,9 +25,9 @@
     "hero-banner": {
       "type": "hero-banner",
       "settings": {
-        "button_text": "Shop Now",
+        "button_text": "view the collection",
         "button_link": "/collections/all",
-        "marquee_text": "Free Shipping on Orders Over $50",
+        "marquee_text": "Shuffle essentials",
         "background_image": "hero_banner_img.avif"
       }
     },

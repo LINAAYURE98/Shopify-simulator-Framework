@@ -14,7 +14,7 @@
         width: 100%;
         overflow: hidden;
 
-        #marquee-text {
+        .marquee-content {
             font-family: var.$fAssistant;
             display: flex;
             white-space: nowrap;
@@ -22,24 +22,15 @@
             font-weight: bold;
             text-transform: uppercase;
             color: var.$text-color;
+            align-items: center;
             animation: marquee-scroll 10s linear infinite;
         }
         .marquee-icon {
             color: var.$icon-color;
-            padding: 0.1rem;
+            padding: 0 0.5rem;
             margin: auto;
+            text-align: center;
         }
     }
 
-}
-
-
-@keyframes marquee-scroll {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
 }

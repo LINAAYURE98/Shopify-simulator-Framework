@@ -128,7 +128,7 @@ body {
   width: 100%;
   overflow: hidden;
 }
-.topbar .marquee #marquee-text {
+.topbar .marquee .marquee-content {
   font-family: monospace;
   display: flex;
   white-space: nowrap;
@@ -136,12 +136,109 @@ body {
   font-weight: bold;
   text-transform: uppercase;
   color: #FFFFFF;
+  align-items: center;
   animation: marquee-scroll 10s linear infinite;
 }
 .topbar .marquee .marquee-icon {
   color: #997df3;
-  padding: 0.1rem;
+  padding: 0 0.5rem;
   margin: auto;
+  text-align: center;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #1c1c1c;
+  padding-top: 6rem;
+}
+.hero__container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: auto;
+  display: flex;
+}
+@media (max-width: 768px) {
+  .hero__container {
+    padding: 0 10px;
+  }
+}
+.hero__image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  position: relative;
+}
+@media (max-width: 1024px) {
+  .hero__image {
+    height: 50vh;
+  }
+}
+.hero__content {
+  position: absolute;
+  left: 54%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 100%;
+  text-align: left;
+}
+@media (max-width: 1024px) {
+  .hero__content {
+    bottom: 1.5rem;
+  }
+}
+.hero__button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #762bfb;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  font-family: system-ui;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+.hero__button:hover {
+  background-color: rgb(104.6046511628, 43.6686046512, 243.3313953488);
+}
+@media (max-width: 1024px) {
+  .hero__button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.75rem;
+  }
+}
+.hero .marquee {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  background-color: #1c1c1c;
+  padding: 1rem 0;
+}
+.hero .marquee .marquee-content {
+  font-family: fantasy;
+  display: flex;
+  white-space: nowrap;
+  font-size: 33px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  align-items: center;
+  animation: marquee-scroll 10s linear infinite;
+}
+.hero .marquee .marquee-icon {
+  color: #997df3;
+  padding: 0 10px;
+  margin: auto;
+  font-size: 54px;
 }
 
 @keyframes marquee-scroll {
@@ -149,7 +246,7 @@ body {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-10%);
   }
 }
 .footer {
@@ -297,7 +394,6 @@ body {
   transition: color 0.3s;
 }
 .footer .footer__nav a:hover {
-  color: #8b5cf6;
   border-bottom: 2px solid #8b5cf6;
 }
 .footer .footer__payment {

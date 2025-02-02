@@ -1,0 +1,108 @@
+@use "../base/variables" as var;
+
+.hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: var.$background-color;
+    padding-top: 6rem;
+
+    &__container {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        height: auto;
+        display: flex;
+        @media (max-width: 768px) {
+            padding: 0 10px;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        display: block;
+        border-radius: 10px;
+        position: relative;
+        @media (max-width: var.$mobile) {
+            height: 50vh;
+        }
+    }
+
+    &__content {
+        position: absolute;
+        left: 54%;
+        bottom: 2rem;
+        transform: translateX(-50%);
+        z-index: 2;
+        width: 100%;
+        text-align: left;
+
+        @media (max-width: var.$mobile) {
+            bottom: 1.5rem;
+        }
+    }
+
+    &__button {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background-color: var.$primary-color;
+        color: white;
+        text-decoration: none;
+        border-radius: 0.25rem;
+        font-family: var.$fsystemui;
+        font-weight: 600;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken(#8b5cf6, 10%);
+        }
+
+        @media (max-width: var.$mobile) {
+            padding: 0.75rem 1.5rem;
+            font-size: 0.75rem;
+        }
+    }
+
+    .marquee {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        background-color: #1c1c1c;
+        padding: 1rem 0;
+
+        .marquee-content {
+            font-family: fantasy;
+            display: flex;
+            white-space: nowrap;
+            font-size: 33px;
+            text-transform: uppercase;
+            color: var.$text-color;
+            align-items: center;
+            animation: marquee-scroll 10s linear infinite;
+        }
+
+        .marquee-icon {
+            color: var.$icon-color;
+            padding:0 10px;
+            margin: auto;
+            font-size: 54px;
+        }
+    }
+}
+
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+    
+    to {
+        transform: translateX(-10%);
+    }
+}

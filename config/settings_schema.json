@@ -1,5 +1,65 @@
 [
   {
+    "name": "Top Bar",
+    "settings": [
+      {
+        "type": "text",
+        "id": "marquee_text",
+        "label": "Marquee Text",
+        "default": "Free Shipping on Orders Over $50"
+      }
+    ]
+  },
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "text",
+        "id": "logo_text",
+        "label": "Logo Text"
+      },
+      {
+        "type": "color",
+        "id": "header_background",
+        "label": "Header Background Color",
+        "default": "#1A1A1A"
+      },
+      {
+        "type": "text",
+        "id": "payment_text",
+        "label": "Payment Methods Text",
+        "default": "We Accept"
+      }
+    ]
+  },
+  {
+    "name": "Hero Banner",
+    "settings": [
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Shop Now"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "marquee_text",
+        "label": "Marquee Text",
+        "default": "Free Shipping on Orders Over $50"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      }
+    ]
+  },
+  {
     "name": "Featured Products",
     "settings": [
       {

@@ -22,17 +22,20 @@ var __webpack_exports__ = {};
   !*** ./src/app.js ***!
   \********************/
 document.addEventListener("DOMContentLoaded", function () {
-    const marqueeText = document.querySelector("#marquee-text .marquee-content");
-    const text = document.querySelector("#marquee-text").getAttribute("data-text");
+  const marquees = document.querySelectorAll(".marquee");
 
-    if (text) {
-        const repeatedText = Array(10)
-            .fill(`<span class="marquee-icon">✦</span> <span class="marquee-text">${text}</span>`)
-            .join(" ");
+  marquees.forEach(function (marquee) {
+      const marqueeText = marquee.querySelector(".marquee-content"); 
+      const text = marquee.getAttribute("data-text"); 
 
-        marqueeText.innerHTML = repeatedText;
-    }
+      if (text && marqueeText) {  
+
+          const repeatedText = Array(10).fill(`<span class="marquee-icon">✦</span> <span class="marquee-text">${text}</span>`).join(" ");
+          marqueeText.innerHTML = repeatedText;
+      }
+  });
 });
+
 
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.site-header');
