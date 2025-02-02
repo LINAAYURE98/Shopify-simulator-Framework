@@ -61,7 +61,7 @@
         cursor: pointer;
 
         &:hover {
-            background-color: darken(#8b5cf6, 10%);
+            background-color: #8b5cf6;
         }
 
         @media (max-width: var.$mobile) {
@@ -81,7 +81,7 @@
             font-family: fantasy;
             display: flex;
             white-space: nowrap;
-            font-size: 33px;
+            font-size: 40px;
             text-transform: uppercase;
             color: var.$text-color;
             align-items: center;

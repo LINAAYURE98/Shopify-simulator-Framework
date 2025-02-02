@@ -75,6 +75,21 @@
     ]
   },
   {
+    "name": "New Collection",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading Text"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color"
+      }
+    ]
+  },
+  {
     "name": "Footer",
     "settings": [
       {

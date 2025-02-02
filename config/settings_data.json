@@ -15,13 +15,6 @@
         "payment_text": "We Accept"
       }
     },
-    "featured-products": {
-      "type": "featured-products",
-      "settings": {
-        "heading": "Our Featured Products",
-        "background_color": "#ffffff"
-      }
-    },
     "hero-banner": {
       "type": "hero-banner",
       "settings": {
@@ -29,6 +22,20 @@
         "button_link": "/collections/all",
         "marquee_text": "Shuffle essentials",
         "background_image": "hero_banner_img.avif"
+      }
+    },
+    "featured-products": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Our Featured Products",
+        "background_color": "#ffffff"
+      }
+    },
+    "new-collections": {
+      "type": "new-collections",
+      "settings": {
+        "heading": "Latest collection",
+        "background_color": "#ffffff"
       }
     },
     "footer": {
