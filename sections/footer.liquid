@@ -1,0 +1,57 @@
+<footer class="footer">
+  <div class="footer__container">
+    <div class="footer__column footer__column--left">
+        <div class="footer__logo">
+            <img src="assets/{{ settings['footer'].settings.logo_imag | asset_url }}" alt="{{ settings['footer'].settings.logo_text }}">
+        </div>
+        <div class="footer__content">
+            <p class="footer__logo-text">© {{ 'now' | date: "%Y" }}, {{ settings['footer'].settings.company }} Operated by</p>
+            <p class="footer__logo-text">Studio Plaid. Need help?</p>
+            <a class="footer__logo-mail" href="mailto:{{ settings['footer'].settings.support_email }}" class="footer__email">Email {{ settings['footer'].settings.support_email }}</a>
+        </div>
+    </div>
+    <div class="footer__column footer__column--center">
+      <nav class="footer__nav">
+        <ul class="footer__nav-primary">
+          {% for link in settings['footer'].settings.links limit: 4 %}
+            <li><a href="{{ link.url }}">{{ link.label | upcase }}</a></li>
+          {% endfor %}
+        </ul>
+        <ul class="footer__nav-secondary">
+          {% for link in settings['footer'].settings.links offset: 4 %}
+            <li><a href="{{ link.url }}">{{ link.label | upcase }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <div class="footer__payment">
+        <p>{{ settings['footer'].settings.pay }}</p>
+        <div class="footer__payment-icons">
+            <img class="payment-icon" src="assets/btc-icon.ico" alt="Bitcoin">
+            <img class="payment-icon" src="assets/eth-icon.ico" alt="Ethereum">
+            <img class="payment-icon" src="assets/lite-icon.ico" alt="Lite">
+            <img class="payment-icon" src="assets/doge-icon.ico" alt="Doge">
+            <img class="payment-icon" src="assets/usd-icon.ico" alt="USDT">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__column footer__column--right">
+      <div class="footer__newsletter">
+        <p>Subscribe and receive drop notifications</p>
+        <div class="footer__form">
+          <input type="email" placeholder="Enter Email" class="footer__input">
+          <button class="footer__submit" aria-label="Submit">
+            <svg viewBox="0 0 24 24" class="footer__submit-icon">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="footer__social">
+        <a href="{{ settings.footer.facebook_url }}" class="footer__social-link">FACEBOOK</a>
+        <a href="{{ settings.footer.twitter_url }}" class="footer__social-link">X(TWITTER)</a>
+        <a href="{{ settings.footer.instagram_url }}" class="footer__social-link">INSTAGRAM</a>
+      </div>
+    </div>
+  </div>
+</footer>

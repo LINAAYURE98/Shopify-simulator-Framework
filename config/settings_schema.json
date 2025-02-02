@@ -15,30 +15,45 @@
     ]
   },
   {
-    "name": "Header",
+    "name": "Footer",
     "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo_image",
+        "label": "Logo Image"
+      },
       {
         "type": "text",
         "id": "logo_text",
-        "label": "STORE"
-      },
-      {
-        "type": "color",
-        "id": "header_background",
-        "label": "Header Background Color",
-        "default": "#1A1A1A"
+        "label": "Logo Text",
+        "default": "MyShopify"
       },
       {
         "type": "text",
-        "id": "payment_text",
-        "label": "Payment Methods Text",
-        "default": "We Accept"
+        "id": "support_email",
+        "label": "Support Email",
+        "default": "support@shuffie.store"
       },
       {
-        "type": "image_picker",
-        "label": "Logo Image",
-        "id": "logo_image",
-        "default": "logotipo.png"
+        "type": "text",
+        "id": "pay",
+        "label": "Supay",
+        "default": "We accept all major cards, PayPal & crypto"
+      },
+      {
+        "type": "url",
+        "id": "facebook_url",
+        "label": "Facebook URL"
+      },
+      {
+        "type": "url",
+        "id": "twitter_url",
+        "label": "Twitter URL"
+      },
+      {
+        "type": "url",
+        "id": "instagram_url",
+        "label": "Instagram URL"
       }
     ]
   }

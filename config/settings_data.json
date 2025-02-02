@@ -29,15 +29,19 @@
       "type": "footer",
       "settings": {
         "logo_text": "MyShopify",
+        "logo_imag": "logotipo_shirt.png",
+        "company": "Shuffle.store",
+        "support_email": "support@shuffle.store",
         "links": [
           { "label": "Home", "url": "/" },
           { "label": "Cart", "url": "/cart" },
-          { "label": "All Products", "url": "/collections/all" },
-          { "label": "Collections", "url": "/collections" },
+          { "label": "All Products", "url": "#products" },
+          { "label": "Collections", "url": "#collections" },
           { "label": "Refund Policy", "url": "/refund-policy" },
           { "label": "Privacy Policy", "url": "/privacy-policy" },
           { "label": "Terms of Service", "url": "/terms-of-service" }
-        ]
+        ],
+        "pay": "We accept all major cards, PayPal & crypto"
       }
     }
   }
