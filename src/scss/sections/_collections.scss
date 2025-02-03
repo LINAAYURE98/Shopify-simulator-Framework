@@ -1,9 +1,11 @@
 @use "../base/variables" as var;
 
 .collections {
-    padding: 0.1rem 1rem ;
+    
     background: var.$background-color;
-
+    @media (min-width: var.$desktop) {
+        padding: 0.1rem 1rem ;
+    }
     @media (max-width: var.$mobile) {
         padding: 2rem 0.5rem;
     }

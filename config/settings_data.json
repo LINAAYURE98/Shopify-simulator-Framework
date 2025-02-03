@@ -11,6 +11,7 @@
       "settings": {
         "logo_text": "STORE",
         "logo_image": "logotipo.png",
+        "logo_image_mobile": "logotipo_mobile.png",
         "header_background": "#1A1A1A",
         "payment_text": "We Accept"
       }
@@ -34,8 +35,7 @@
     "new-collections": {
       "type": "new-collections",
       "settings": {
-        "heading": "Latest collection",
-        "background_color": "#ffffff"
+        "heading": "Latest collection"
       }
     },
     "footer": {

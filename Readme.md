@@ -1,145 +1,76 @@
-# Shopify Simulator Documentation
+# Proyecto Frontend
 
-Welcome to **Shopify Simulator**, a lightweight environment designed to help developers explore Shopify's Liquid templating language and dynamic section-based architecture. This project simulates Shopify's core functionalities, enabling developers to practice creating reusable components, iterating through data, and working with dynamic settings.
+## Desarrolladora
+Lina Maria Ayure Lara
 
----
+## Inicio Rápido
 
-## **Project Structure**
+### Pre-requisitos
+- Node.js
+- npm
 
-```
-/simulator
-├── /config
-│   ├── settings_schema.json      # Defines configurable settings for sections
-│   ├── settings_data.json        # Stores dynamic data for rendering sections
-├── /data
-│   ├── products.json             # Sample product data
-│   ├── collections.json          # Sample collection data
-├── /public
-│   ├── styles.css                # Compiled CSS file
-│   ├── main.js                   # Compiled JavaScript file
-├── /sections
-│   ├── featured-products.liquid  # Main section rendering product lists
-├── /snippets
-│   ├── product-card.liquid       # Reusable snippet for individual product cards
-├── /templates
-│   ├── index.liquid              # Main template file
-├── /src
-│   ├── styles.scss               # Base SASS file
-│   ├── app.js                    # Base JavaScript logic
-├── /assets                       # Images for products, banners, and collections
-├── package.json
-├── webpack.config.js
-├── server.js
-```
-
----
-
-## **Liquid Basics**
-
-Liquid is a templating language used in Shopify to dynamically render content. Below are the key concepts you'll use in this simulator:
-
-### **Sections**
-
-Sections are modular components that render specific parts of a page. For example, the `featured-products.liquid` file is a section that displays a list of products. Sections can:
-
-- Access dynamic data from `settings_data.json`.
-- Be configured through a schema defined in `settings_schema.json`.
-
-Example:
-
-```liquid
-<section class="featured-products">
-  <h2>{{ settings['featured-products'].settings.heading }}</h2>
-</section>
-```
-
-### **Snippets**
-
-Snippets are reusable components, such as a product card. You can include a snippet using the `{% render %}` tag:
-
-Example:
-
-```liquid
-<div class="product-list">
-  {% for product in products %}
-    {% render 'product-card', product: product %}
-  {% endfor %}
-</div>
-```
-
-### **Iterating Over Objects**
-
-Liquid allows you to iterate over arrays, such as products or collections:
-
-```liquid
-<ul>
-  {% for product in products %}
-    <li>{{ product.title }} - ${{ product.price }}</li>
-  {% endfor %}
-</ul>
-```
-
-### **Filters**
-
-Filters are used to manipulate output. Some common filters:
-
-- `capitalize`: Capitalizes the first letter.
-- `date`: Formats a date.
-- `money`: Formats a number as currency.
-
-Example:
-
-```liquid
-{{ product.price | money }}
-{{ product.created_at | date: "%B %d, %Y" }}
-```
-
----
-
-## **Dynamic Configuration**
-
-### **Schema (`settings_schema.json`)**
-
-The schema defines the settings available for a section. While it's necessary in Shopify, it might not be required here.
-
-### **Data (`settings_data.json`)**
-
-This file contains the dynamic values for settings
-
-## **Setup Instructions**
-
-### **Install Dependencies**
-
+### Instalación
+1. Instala las dependencias del proyecto:
 ```bash
 npm install
 ```
 
-### **Run the Server**
-
+2. Inicia el servidor de desarrollo:
 ```bash
-npm start
+npm run start
 ```
 
-### **Build Styles and Scripts**
+El proyecto estará disponible en `http://localhost:3000`
 
+## Guía para Desarrolladores
+
+### Configuración de Webpack
+El proyecto utiliza Webpack para compilar los archivos SASS y JavaScript ubicados en la carpeta `src`. Los archivos compilados se generan en la carpeta `public` y son referenciados por las vistas.
+
+Para activar la compilación en tiempo real:
 ```bash
-npm run build
+npm run watch
 ```
 
----
+### Estructura del Proyecto
 
-## **Additional Notes**
+#### SASS (`src/sass/`)
+La estructura de SASS está organizada de la siguiente manera:
 
-### **Assets**
+- `base/variables`: Contiene variables globales para:
+  - Colores
+  - Tipografías
+  - Breakpoints responsive
 
-All product, banner, and collection images are stored in the `/assets` folder. Refer to the `data/products.json` and `data/collections.json` files for mappings.
+Para utilizar estas variables en otros archivos SASS, es necesario importarlas usando `@use`.
 
-### **Testing the Application**
+#### Componentes SASS (`src/sass/sections/`)
+Cada componente tiene su propio archivo SASS, incluyendo:
+- header
+- footer
+- top-bar
+- Otros componentes específicos del diseño
 
-Visit `http://localhost:3000` in your browser to view the simulator in action.
+#### JavaScript (`src/js/`)
+El archivo JavaScript principal contiene tres funciones principales:
 
----
+1. **Gestión de Marquees**
+   - Maneja la funcionalidad de dos o más marquees en el desarrollo
 
-Feel free to customize the simulator further to match your requirements. Happy coding! 🚀
+2. **Control del Header en Scroll**
+   - Administra la clase para el comportamiento del header durante el scroll
 
-For more information about Liquid, refer to the [official Liquid documentation](https://liquidjs.com/tutorials/intro-to-liquid.html).
+3. **Carrusel Responsive**
+   - Controla la funcionalidad del carrusel tanto en versión móvil como desktop
+
+4. **Header Responsive**
+- Controla la funcionalidad del Header tanto en versión móvil
+
+### Notas sobre el Código
+- Se ha priorizado un código limpio y autoexplicativo
+- Se minimizó el uso de comentarios para mantener el código más legible
+- La estructura del proyecto sigue una organización lógica y clara
+
+## Soporte
+
+Si tienes dudas o preguntas sobre el desarrollo, por favor contacta a la desarrolladora.

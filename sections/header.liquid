@@ -1,47 +1,56 @@
 <div class="header-section" data-section-id="header" data-section-type="header">
   <header class="site-header" style="background-color: {{ settings['header'].settings.header_background }};">
-    
-    <div class="header-container">
-      <!-- Logo Column -->
-      <div class="header-logo">
-        <a href="/">
-          <div class="logo-placeholder">
-            <img src="assets/{{ settings['header'].settings.logo_image | asset_url }}" alt="{{ settings['header'].settings.logo_text }}">
+    <div class="site-header__container">
+      <button class="hamburger" aria-label="Menu">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
 
+      <div class="logo">
+        <a href="/" class="logo__link">
+          <div class="logo__wrapper">
+            <picture class="logo__picture">
+              <source srcset="assets/{{ settings['header'].settings.logo_image_mobile | asset_url }}" media="(max-width: 1024px)" loading="lazy">
+              <img src="assets/{{ settings['header'].settings.logo_image | asset_url }}" alt="{{ settings['header'].settings.logo_text }}" class="logo__image">
+            </picture>
           </div>
         </a>
       </div>
-     
 
-      <!-- Payment Methods Column -->
-      <div class="header-payment-methods">
-        <div class="payment-icons">
-        <div class="payment-content">
-            <span>{{ settings['header'].settings.payment_text }}</span>
-            <div class="crypto-icons">
-              <img class="payment-icon" src="assets/btc-icon.ico" alt="Bitcoin">
-              <img class="payment-icon" src="assets/eth-icon.ico" alt="Ethereum">
-              <img class="payment-icon" src="assets/lite-icon.ico" alt="Lite">
-              <img class="payment-icon" src="assets/doge-icon.ico" alt="Doge">
-              <img class="payment-icon" src="assets/usd-icon.ico" alt="USDT">
+      <div class="payment">
+        <div class="payment__wrapper">
+          <div class="payment__content">
+            <span class="payment__text">{{ settings['header'].settings.payment_text }}</span>
+            <div class="payment__icons">
+              <img class="payment__icon" src="assets/btc-icon.ico" alt="Bitcoin">
+              <img class="payment__icon" src="assets/eth-icon.ico" alt="Ethereum">
+              <img class="payment__icon" src="assets/lite-icon.ico" alt="Lite">
+              <img class="payment__icon" src="assets/doge-icon.ico" alt="Doge">
+              <img class="payment__icon" src="assets/usd-icon.ico" alt="USDT">
             </div>
-        </div>
+          </div>
         </div>
       </div>
 
-      <!-- Navigation Links and Cart -->
-      <div class="header-nav">
-        <nav class="main-nav">
-          <a href="#products" class="nav-link">All Products</a>
-          <a href="#collections" class="nav-link">Collections</a>
+      <div class="nav">
+        <nav class="nav__menu">
+          <a href="#products" class="nav__link">All Products</a>
+          <a href="#collections" class="nav__link">Collections</a>
         </nav>
-        <div class="cart-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 26">
-            <path 
-              fill="#FFFFFF"
-              d="M7.29 19.5c-1.15 0-2.08.97-2.08 2.17s.93 2.17 2.08 2.17 2.08-.97 2.08-2.17-.93-2.17-2.08-2.17zM1.04 3.25c0 .54.42 1.08 1.04 1.08h1.04l3.75 8.23L5.42 15.17c-.1.32-.21.76-.21 1.08 0 1.19.94 2.17 2.08 2.17h12.5c.63 0 1.04-.43 1.04-1.08s-.42-1.08-1.04-1.08H7.29l1.15-2.17h7.71c.83 0 1.56-.43 1.87-1.19l3.75-7.04c.21-.32.21-.65.1-.97-.21-.33-.62-.54-1.04-.54H5.42l-.42-1.08c-.1-.32-.42-.54-.73-.54H2.08c-.62 0-1.04.43-1.04 1.08zm16.67 16.25c-1.15 0-2.08.97-2.08 2.17s.93 2.17 2.08 2.17 2.08-.97 2.08-2.17-.93-2.17-2.08-2.17z"
-            />
+        <div class="nav__cart">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 26">
+            <path fill="#FFFFFF" d="M7.29 19.5c-1.15 0-2.08.97-2.08 2.17s.93 2.17 2.08 2.17 2.08-.97 2.08-2.17-.93-2.17-2.08-2.17zM1.04 3.25c0 .54.42 1.08 1.04 1.08h1.04l3.75 8.23L5.42 15.17c-.1.32-.21.76-.21 1.08 0 1.19.94 2.17 2.08 2.17h12.5c.63 0 1.04-.43 1.04-1.08s-.42-1.08-1.04-1.08H7.29l1.15-2.17h7.71c.83 0 1.56-.43 1.87-1.19l3.75-7.04c.21-.32.21-.65.1-.97-.21-.33-.62-.54-1.04-.54H5.42l-.42-1.08c-.1-.32-.42-.54-.73-.54H2.08c-.62 0-1.04.43-1.04 1.08zm16.67 16.25c-1.15 0-2.08.97-2.08 2.17s.93 2.17 2.08 2.17 2.08-.97 2.08-2.17-.93-2.17-2.08-2.17z" />
           </svg>
+        </div>
+      </div>
+
+      <div class="mobile-menu">
+        <div class="mobile-menu__content">
+          <nav class="mobile-menu__nav">
+            <a href="#products" class="mobile-menu__link">All Products</a>
+            <a href="#collections" class="mobile-menu__link">Collections</a>
+          </nav>
         </div>
       </div>
     </div>

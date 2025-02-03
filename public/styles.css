@@ -3,22 +3,25 @@
   \*******************************************************************************************************************************************/
 body {
   margin: 0;
+  background: #1c1c1c;
 }
 
-.site-header {
+.header-section .body--menu-open {
+  overflow: hidden;
+}
+.header-section .site-header {
   position: fixed;
   left: 0;
   right: 0;
   z-index: 100;
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
-.site-header.is-scrolled {
+.header-section .site-header--scrolled {
   background: rgba(0, 0, 0, 0.2) !important;
   backdrop-filter: blur(10px);
   top: 0;
 }
-
-.header-container {
+.header-section .site-header__container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
@@ -27,30 +30,38 @@ body {
   align-items: center;
   gap: 2rem;
 }
-
-.header-logo .logo-placeholder {
+@media (max-width: 768px) {
+  .header-section .site-header__container {
+    grid-template-columns: auto 1fr auto;
+  }
+}
+.header-section .logo__wrapper {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
-.header-logo .logo-placeholder .shuffle-logo {
+.header-section .logo__shuffle {
   color: #8B5CF6;
   font-size: 1.5rem;
   font-weight: bold;
 }
-.header-logo .logo-placeholder .store-text {
+.header-section .logo__store-text {
   color: #FFFFFF;
   font-size: 1.25rem;
   font-weight: bold;
 }
-
-.header-payment-methods .payment-icons {
+@media (max-width: 768px) {
+  .header-section .logo {
+    order: 2;
+  }
+}
+.header-section .payment__wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
 }
-.header-payment-methods .payment-icons .payment-content {
+.header-section .payment__content {
   width: auto;
   margin: auto;
   display: inline-flex;
@@ -59,37 +70,46 @@ body {
   padding: 0.5rem 1.5rem;
   border-radius: 50px;
 }
-.header-payment-methods .payment-icons span {
+.header-section .payment__text {
   color: #FFFFFF;
   font-size: 0.875rem;
   font-family: monospace;
   padding: 0 5px;
 }
-.header-payment-methods .payment-icons .payment-icon {
+.header-section .payment__icon {
   width: 24px;
   height: 24px;
 }
-
-.header-nav {
+@media (max-width: 768px) {
+  .header-section .payment {
+    display: none;
+  }
+}
+.header-section .nav {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-.header-nav .main-nav {
+.header-section .nav__menu {
   display: flex;
   gap: 0.5rem;
 }
-.header-nav .main-nav .nav-link {
+@media (max-width: 768px) {
+  .header-section .nav__menu {
+    display: none;
+  }
+}
+.header-section .nav__link {
   color: #FFFFFF;
   text-decoration: none;
   font-size: 0.875rem;
   transition: color 0.2s ease;
   font-family: system-ui;
 }
-.header-nav .main-nav .nav-link:hover {
+.header-section .nav__link:hover {
   color: #8B5CF6;
 }
-.header-nav .cart-icon {
+.header-section .nav__cart {
   color: #FFFFFF;
   background: #762bfb;
   cursor: pointer;
@@ -102,19 +122,90 @@ body {
   height: 26px;
   padding: 0.5rem 1rem;
 }
-
 @media (max-width: 768px) {
-  .header-container {
-    grid-template-columns: 1fr auto;
-    gap: 1rem;
+  .header-section .nav {
+    order: 3;
   }
-  .header-payment-methods {
-    display: none;
-  }
-  .header-nav .main-nav {
-    display: none;
+  .header-section .nav__cart {
+    margin-left: auto;
   }
 }
+.header-section .hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 110;
+}
+.header-section .hamburger__line {
+  width: 100%;
+  height: 2px;
+  background-color: #762bfb;
+  transition: all 0.3s ease;
+}
+.header-section .hamburger--active .hamburger__line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.header-section .hamburger--active .hamburger__line:nth-child(2) {
+  opacity: 0;
+}
+.header-section .hamburger--active .hamburger__line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+@media (max-width: 768px) {
+  .header-section .hamburger {
+    display: flex;
+    order: 1;
+  }
+}
+.header-section .mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9490196078);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  transition: left 0.3s ease;
+}
+.header-section .mobile-menu--active {
+  left: 0;
+}
+.header-section .mobile-menu__content {
+  padding: 80px 2rem 2rem;
+  height: 100%;
+  overflow-y: auto;
+}
+.header-section .mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem;
+}
+.header-section .mobile-menu__link {
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+  font-family: system-ui;
+}
+.header-section .mobile-menu__link:hover {
+  color: #762bfb;
+}
+@media (max-width: 768px) {
+  .header-section .mobile-menu {
+    display: block;
+  }
+}
+
 .topbar {
   width: 100%;
   overflow: hidden;
@@ -395,8 +486,12 @@ body {
 }
 
 .collections {
-  padding: 0.1rem 1rem;
   background: #1c1c1c;
+}
+@media (min-width: 1025px) {
+  .collections {
+    padding: 0.1rem 1rem;
+  }
 }
 @media (max-width: 1024px) {
   .collections {

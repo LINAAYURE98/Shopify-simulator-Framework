@@ -25,6 +25,11 @@
         "default": "#1A1A1A"
       },
       {
+        "type": "image_picker",
+        "id": "logo_image_mobile",
+        "label": "logo_image_mobile"
+      },
+      {
         "type": "text",
         "id": "payment_text",
         "label": "Payment Methods Text",
@@ -81,11 +86,6 @@
         "type": "text",
         "id": "heading",
         "label": "Heading Text"
-      },
-      {
-        "type": "color",
-        "id": "background_color",
-        "label": "Background Color"
       }
     ]
   },
