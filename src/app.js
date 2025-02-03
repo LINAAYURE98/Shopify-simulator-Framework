@@ -23,3 +23,69 @@ window.addEventListener('scroll', function() {
     }
   });
   
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const viewAllButton = document.querySelector('[data-view-all]');
+    const productList = document.querySelector('[data-product-list]');
+    const products = productList.querySelectorAll('.product-card');
+
+    if (window.innerWidth >= 1024) {
+      products.forEach((product, index) => {
+        if (index >= 4) {
+          product.classList.add('product-card--hidden');
+        }
+      });
+    }
+  
+    if (viewAllButton && productList) {
+      viewAllButton.addEventListener('click', function() {
+        const isExpanded = viewAllButton.getAttribute('aria-expanded') === 'true';
+        const hiddenProducts = productList.querySelectorAll('.product-card--hidden');
+  
+        if (!isExpanded) {
+          hiddenProducts.forEach(product => {
+            product.classList.remove('product-card--hidden');
+          });
+          viewAllButton.setAttribute('aria-expanded', 'true');
+          viewAllButton.textContent = 'Show Less';
+        } else {
+          products.forEach((product, index) => {
+            if (index >= 4) {
+              product.classList.add('product-card--hidden');
+            }
+          });
+          viewAllButton.setAttribute('aria-expanded', 'false');
+          viewAllButton.textContent = 'View All';
+        }
+      });
+    }
+  
+    let touchstartX = 0;
+    let touchendX = 0;
+  
+    if (window.innerWidth <= 1024) {
+      productList.addEventListener('touchstart', e => {
+        touchstartX = e.changedTouches[0].screenX;
+      });
+  
+      productList.addEventListener('touchend', e => {
+        touchendX = e.changedTouches[0].screenX;
+        handleSwipe();
+      });
+    }
+  
+    function handleSwipe() {
+      const SWIPE_THRESHOLD = 50;
+      const productListWidth = productList.offsetWidth;
+      const scrollDistance = Math.abs(touchstartX - touchendX);
+  
+      if (scrollDistance > SWIPE_THRESHOLD) {
+        if (touchstartX > touchendX) {
+          productList.scrollBy({ left: productListWidth, behavior: 'smooth' });
+        } else {
+          productList.scrollBy({ left: -productListWidth, behavior: 'smooth' });
+        }
+      }
+    }
+  });
+  

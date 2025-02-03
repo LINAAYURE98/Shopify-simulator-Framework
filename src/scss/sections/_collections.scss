@@ -1,7 +1,7 @@
 @use "../base/variables" as var;
 
 .collections {
-    padding: 2rem 1rem;
+    padding: 0.1rem 1rem ;
     background: var.$background-color;
 
     @media (max-width: var.$mobile) {
@@ -49,7 +49,7 @@
             @media (min-width: var.$desktop) {
                 content: "";
                 position: absolute;
-                top: 100%;
+                margin-top: -9rem;
                 left: 0;
                 width: 100%;
                 height: 500px;
@@ -60,7 +60,7 @@
             @media (max-width: var.$mobile) {
                 content: "";
                 position: absolute;
-                top: 70%;
+                margin-top: -13rem;
                 left: 0;
                 width: 100%;
                 height: 500px;
