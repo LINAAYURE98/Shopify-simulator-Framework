@@ -1,11 +1,33 @@
-<div class="product-card">
-  <h3>{{ product.title }}</h3>
-  <p>Price: ${{ product.price }}</p>
-  {% if product.tags %}
-    <ul>
-      {% for tag in product.tags %}
-        <li>{{ tag }}</li>
-      {% endfor %}
-    </ul>
-  {% endif %}
+<div class="product-card {% if forloop.index > 4 %}product-card--hidden{% endif %}">
+  <div class="product-card__image-container">
+    {% if product.tags.size > 0 %}
+      <div class="product-card__tags">
+        {% for tag in product.tags %}
+          <span class="product-card__tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <div class="product-card__image-wrapper">
+      <img 
+        src="assets/{{ product.image | img_url: 'master' }}" 
+        alt="{{ product.title }}" 
+        class="product-card__image"
+        loading="{% if forloop.index <= 4 %}eager{% else %}lazy{% endif %}"
+      >
+    </div>
+  </div>
+  
+  <div class="product-card__details">
+    <div class="product-card__info">
+      <h3 class="product-card__title">{{ product.title }}</h3>
+      <p class="product-card__price">${{ product.price | money_without_currency }}</p>
+    </div>
+    <button class="product-card__add-to-cart">
+      <div class="cart-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 26">
+        <path fill="#FFFFFF" d="M7.29 19.5c-1.15 0-2.08.97-2.08 2.17s.93 2.17 2.08 2.17 2.08-.97 2.08-2.17-.93-2.17-2.08-2.17zM1.04 3.25c0 .54.42 1.08 1.04 1.08h1.04l3.75 8.23L5.42 15.17c-.1.32-.21.76-.21 1.08 0 1.19.94 2.17 2.08 2.17h12.5c.63 0 1.04-.43 1.04-1.08s-.42-1.08-1.04-1.08H7.29l1.15-2.17h7.71c.83 0 1.56-.43 1.87-1.19l3.75-7.04c.21-.32.21-.65.1-.97-.21-.33-.62-.54-1.04-.54H5.42l-.42-1.08c-.1-.32-.42-.54-.73-.54H2.08c-.62 0-1.04.43-1.04 1.08zm16.67 16.25c-1.15 0-2.08.97-2.08 2.17s.93 2.17 2.08 2.17 2.08-.97 2.08-2.17-.93-2.17-2.08-2.17z"></path>
+      </svg>
+    </div>
+  </button>
+  </div>
 </div>

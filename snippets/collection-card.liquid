@@ -1,0 +1,11 @@
+<article class="collections__card">
+  <div class="collections__card-image">
+      <img 
+        src="assets/{{ collection.image | img_url: 'master' }}" 
+        alt="{{ collection.title }}" 
+        class="collections__image"
+        loading="lazy"
+      >
+  </div>
+  <h3 class="collections__card-title">{{ collection.title }}</h3>
+</article>

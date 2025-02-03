@@ -1,5 +1,30 @@
 {
   "sections": {
+    "top-bar": {
+      "type": "top-bar",
+      "settings": {
+        "marquee_text": "Free Shipping on Orders Over $50"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_text": "STORE",
+        "logo_image": "logotipo.png",
+        "logo_image_mobile": "logotipo_mobile.png",
+        "header_background": "#1A1A1A",
+        "payment_text": "We Accept"
+      }
+    },
+    "hero-banner": {
+      "type": "hero-banner",
+      "settings": {
+        "button_text": "view the collection",
+        "button_link": "/collections/all",
+        "marquee_text": "Shuffle essentials",
+        "background_image": "hero_banner_img.avif"
+      }
+    },
     "featured-products": {
       "type": "featured-products",
       "settings": {
@@ -7,28 +32,29 @@
         "background_color": "#ffffff"
       }
     },
-    "hero-banner": {
-      "type": "hero-banner",
+    "new-collections": {
+      "type": "new-collections",
       "settings": {
-        "button_text": "Shop Now",
-        "button_link": "/collections/all",
-        "marquee_text": "Free Shipping on Orders Over $50",
-        "background_image": "hero_banner_img.avif"
+        "heading": "Latest collection"
       }
     },
     "footer": {
       "type": "footer",
       "settings": {
         "logo_text": "MyShopify",
+        "logo_imag": "logotipo_shirt.png",
+        "company": "Shuffle.store",
+        "support_email": "support@shuffle.store",
         "links": [
           { "label": "Home", "url": "/" },
           { "label": "Cart", "url": "/cart" },
-          { "label": "All Products", "url": "/collections/all" },
-          { "label": "Collections", "url": "/collections" },
+          { "label": "All Products", "url": "#products" },
+          { "label": "Collections", "url": "#collections" },
           { "label": "Refund Policy", "url": "/refund-policy" },
           { "label": "Privacy Policy", "url": "/privacy-policy" },
           { "label": "Terms of Service", "url": "/terms-of-service" }
-        ]
+        ],
+        "pay": "We accept all major cards, PayPal & crypto"
       }
     }
   }

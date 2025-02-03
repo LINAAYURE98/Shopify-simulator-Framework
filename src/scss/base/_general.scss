@@ -1,0 +1,6 @@
+@use  "variables" as vars;
+
+body{
+  margin: 0;
+  background: vars.$background-color;
+}

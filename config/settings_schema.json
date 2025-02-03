@@ -1,5 +1,70 @@
 [
   {
+    "name": "Top Bar",
+    "settings": [
+      {
+        "type": "text",
+        "id": "marquee_text",
+        "label": "Marquee Text",
+        "default": "Free Shipping on Orders Over $50"
+      }
+    ]
+  },
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "text",
+        "id": "logo_text",
+        "label": "Logo Text"
+      },
+      {
+        "type": "color",
+        "id": "header_background",
+        "label": "Header Background Color",
+        "default": "#1A1A1A"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_image_mobile",
+        "label": "logo_image_mobile"
+      },
+      {
+        "type": "text",
+        "id": "payment_text",
+        "label": "Payment Methods Text",
+        "default": "We Accept"
+      }
+    ]
+  },
+  {
+    "name": "Hero Banner",
+    "settings": [
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Shop Now"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "marquee_text",
+        "label": "Marquee Text",
+        "default": "Free Shipping on Orders Over $50"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      }
+    ]
+  },
+  {
     "name": "Featured Products",
     "settings": [
       {
@@ -11,6 +76,59 @@
         "type": "color",
         "id": "background_color",
         "label": "Background Color"
+      }
+    ]
+  },
+  {
+    "name": "New Collection",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading Text"
+      }
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo_image",
+        "label": "Logo Image"
+      },
+      {
+        "type": "text",
+        "id": "logo_text",
+        "label": "Logo Text",
+        "default": "MyShopify"
+      },
+      {
+        "type": "text",
+        "id": "support_email",
+        "label": "Support Email",
+        "default": "support@shuffie.store"
+      },
+      {
+        "type": "text",
+        "id": "pay",
+        "label": "Supay",
+        "default": "We accept all major cards, PayPal & crypto"
+      },
+      {
+        "type": "url",
+        "id": "facebook_url",
+        "label": "Facebook URL"
+      },
+      {
+        "type": "url",
+        "id": "twitter_url",
+        "label": "Twitter URL"
+      },
+      {
+        "type": "url",
+        "id": "instagram_url",
+        "label": "Instagram URL"
       }
     ]
   }

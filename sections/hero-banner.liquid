@@ -1,0 +1,25 @@
+<section class="hero">
+  {% if settings.hero-banner.settings.background_image %}
+    <div class="hero__container">
+      <img 
+        class="hero__image"
+        src="assets/{{ settings['hero-banner'].settings.background_image | asset_url }}" 
+        alt="{{ settings['header'].settings.logo_text }}"
+        loading="eager"
+      >
+      <div class="hero__content">
+        {% if settings['hero-banner'].settings.button_text != blank and settings['hero-banner'].settings.button_link != blank %}
+          <a href="{{ settings['hero-banner'].settings.button_link }}" class="hero__button">
+            {{ settings['hero-banner'].settings.button_text}}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if settings['hero-banner'].settings.marquee_text != blank %}
+    <div class="marquee" data-text="{{ settings['hero-banner'].settings.marquee_text }}">
+        <div class="marquee-content"></div>
+      </div>
+  {% endif %}
+</section>
